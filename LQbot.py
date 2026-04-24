@@ -18,7 +18,7 @@ load_dotenv(override=True)
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 DB_PASSWORD = os.environ.get("DB_PASSWORD")
 SERVER = '208.112.103.123'
-DATABASE = 'LearnQuest'
+DATABASE = 'LQTest'
 USERNAME = 'learnquest2'
 
 CONNECTION_STRING = f"mssql+pyodbc://{USERNAME}:{DB_PASSWORD}@{SERVER}/{DATABASE}?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes"
