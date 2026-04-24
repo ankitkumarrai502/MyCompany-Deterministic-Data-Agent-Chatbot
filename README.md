@@ -1,32 +1,52 @@
-# 🎓 LearnQuest AI Assistant (RAG + Lead Generation)
+- I attended the Webinar which was suggested by You . And I have received the certificate. It was not that engaging and not that informative as the speaker was only focused mostly on difference between QA , QC, QM and QE>
 
-An enterprise-grade AI chatbot built for LearnQuest that combines **Retrieval-Augmented Generation (RAG)** for accurate customer support with an automated **Lead Generation** pipeline. 
+QA â†’ Prevent defects (Process)
+QC â†’ Detect defects (Product)
+QM â†’ Manage quality (Strategy)
+QE â†’ Engineer quality (Automation + Dev approach)
 
-Instead of relying on basic LLM knowledge, this bot grounds its answers in official company documentation. When it detects buying intent, it seamlessly pivots from Q&A to a conversational lead capture flow, saving prospects directly to a local database for the sales team.
+- Actually my Dad is not well , he is going through some serious problem related to his gall bladder stones and because of that I need him to take to hospital . So my travelling will something like , I need to go first to my native and then pick him from there and take him to hospital which is in another state and then I am not sure how much time it will take for the surgery and tests that the doctors will take. So possibility is I may not be completely available at day time for a week or so , but i will be available and I can work at night time somewhere after 9 PM or so. I will keep on updating you the situation. 
 
-## 🚀 Key Features
-* **Document-Grounded Q&A (RAG):** Answers user queries strictly using the provided LearnQuest PDF manual, eliminating AI hallucinations.
-* **Intent-Driven Lead Capture:** Automatically detects when a user wants to enroll or asks about specific courses, pausing the RAG flow to capture their Name, Email, Course, and Country.
-* **Secure Admin Dashboard:** A password-protected Streamlit portal for the sales team to view captured leads and export them to CSV.
-* **Conversational Guardrails:** Hardcoded logic prevents the AI from leaking system prompts or breaking character.
+- 
 
-## 🛠️ Tech Stack
-* **Frontend UI:** Streamlit
-* **AI Orchestration:** LangChain
-* **LLM:** Llama 3.1 (via Groq API for ultra-fast inference)
-* **Embeddings:** HuggingFace (`sentence-transformers/all-MiniLM-L6-v2`)
-* **Vector Database:** FAISS
-* **Relational Database:** SQLite (for secure lead storage)
+- Tach Team & Gabi :
+LQPO Tasks 
 
-## 📁 Project Structure
-* `LQbot.py`: The main conversational interface and lead routing logic.
-* `admin_dashboard.py`: Secure portal for viewing and exporting leads.
-* `create_LQmemory_for_llm.py`: Offline ingestion script to chunk PDFs and build the FAISS vector index.
-* `connect_LQmemory_with_llm.py`: Core logic for connecting the vector store to the LLM.
+Automatic proposal generation in Capgemini Tracker
 
-## ⚙️ Local Setup Instructions
+Regarding Distribution Lists and Notification management , Krish still needs to update us on this.
 
-**1. Clone the repository:**
-```bash
-git clone [https://github.com/yourusername/LearnQuest-AI-Assistant.git](https://github.com/yourusername/LearnQuest-AI-Assistant.git)
-cd LearnQuest-AI-Assistant
+There was a sub task under Client Success and Delivery Operations in the name of CRM Queue which was handled by Krish and Gabi confirmed that this is fixed now. 
+
+- Tech Team & Gwen :
+Proactive GTR - Where you asked Dibya to proceed making the changes and also to verify first whether the Proactive GTR logiv applied in EMEA has also been implemented for the US Region or not. So here there is one dependency from Gwen, so Gwen basically said she will provide the full list of specific VMware-based labs in EMEA IBM courses that need to be marked for GTR.
+
+AI stuffs - 
+- What I am thinking was to make the AI Agents perfectly fine in terms of to the point response, then time taking for response generating and amount of token it is consuming is little challenging to fix , I need 1 complete month to understand deeply these in depth architecture to solve our issues, so I am planning to build a completely new Chatbot interface along with the logic to connect with LLM and then with database and retrieve the information from the DB to user using VIBE CODING . 
+
+
+
+Amy- 
+Training Schedule - Add some Columns- Changes done , need to test by Amy
+
+CG proposal automatic generation from CLASS:
+
+What is the core issue/request?
+Gabriela (Gabi) wanted a new feature added to the system. She asked if the team could set up the "Capgemini tracker" to automatically generate proposals, saving them from having to create these documents manually.
+
+What has the development team done so far?
+The developer assigned to this, John Polec, has actually already built the feature!
+
+He added a new "Generate Proposal" link into the system. (Right now, he has it hidden so only he, Petra, and the requestor can see it while it is being tested).
+
+To make the automatic documents work properly, he had to add a few new fields to the Capgemini tracker, such as a dropdown for "Delivery Method" and date boxes to track when a proposal is "Approved" or "Rejected".
+
+What is the status?
+The ClickUp ticket is officially marked as "ACCEPTED". However, based on John's email update, the initial coding phase is essentially finished, and it is now in a testing/review phase.
+
+What needs to be done next, and by whom?
+The ball is now in Gabi's (the requestor's) court. John is waiting on her for two specific things to finish this up:
+
+Provide MSA Numbers: John needs Gabi to send him the "Master Service Agreement" numbers for each Capgemini client so he can program the system to automatically include them on the proposals.
+
+Test it out: He needs Gabi to review the new "Generate Proposal" button and the new fields he added to see if everything works the way she wants it to.
