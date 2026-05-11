@@ -18,7 +18,7 @@ load_dotenv(override=True)
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 DB_PASSWORD = os.environ.get("DB_PASSWORD")
 SERVER = '208.112.103.123'
-DATABASE = 'LQTest'
+DATABASE = 'LearnQuest'
 USERNAME = 'learnquest2'
 
 CONNECTION_STRING = f"mssql+pyodbc://{USERNAME}:{DB_PASSWORD}@{SERVER}/{DATABASE}?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes"
@@ -26,7 +26,7 @@ engine = create_engine(CONNECTION_STRING)
 
 # 1. THE MINI-SCHEMA
 MINI_SCHEMA = """
-TABLE: vw_clean_schedule
+TABLE: public_schedule_table
 COLUMNS:
 - classid (Unique ID)
 - coursenumber (Course Code)
@@ -35,7 +35,6 @@ COLUMNS:
 - country, city (Location)
 - class_price_from_schedule (Numeric - ALWAYS use this for price, cost, or $)
 - country_currency_symbol_from_schedule (Text - e.g., 'USD', 'EUR', 'GBP')
-- country_search_tags (Text - ALWAYS use this column when searching for country names, abbreviations, or locations)
 """
 
 
@@ -60,9 +59,9 @@ def ask_katie(user_question, memory):
         CRITICAL RULES:
         1. Use ONLY the tables and columns listed in the schema below.
         2. NEVER use 'SELECT *'. Always select specific, relevant columns.
-        3. If the user asks a generic, conversational, or off-topic question (e.g., "Who created you?", "Tell me a joke", "How are you?"), DO NOT WRITE SQL. Output exactly this word: GENERIC_CHAT
-        4. Output ONLY the raw SQL query (or the word GENERIC_CHAT). Do not include markdown formatting.
-
+        3. If the user asks a generic, conversational, or off-topic question (e.g., "Who created you?", "Tell me a joke"), DO NOT WRITE SQL. Output exactly this word: GENERIC_CHAT
+        4. COUNTRY ALIASES: The database uses full country names. If the user searches for abbreviations like 'UK', 'US', 'USA', or 'UAE', you MUST write the SQL to search for 'United Kingdom', 'United States', or 'United Arab Emirates'.
+        5. Output ONLY the raw SQL query (or the word GENERIC_CHAT). Do not include markdown formatting.
         SCHEMA:
         {schema}
 
@@ -156,7 +155,7 @@ def main():
                 response_text = ask_katie(prompt, memory_storybook)
             st.markdown(response_text)
 
-        st.session_state.messages.append({'role': 'assistant', 'content': response_text})
+        st.session_state.messages.append({'role': 'assistant', 'conntent': response_text})
 
 
 if __name__ == "__main__":
